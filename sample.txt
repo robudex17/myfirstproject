@@ -1,0 +1,29 @@
+exten => _290948[05],1,Set$(PH_IAX=IAX2/sbphilippines:sbtrading@103.5.6.2)
+exten => _290948[05],n,Set(A=${PH_IAX}/6411&${PH_IAX}/6437&${PH_IAX}/6311&${PH_IAX}/6338)
+exten => _290948[05],n,Set(B=${PH_IAX}/6381)
+exten => _290948[05],n,Set(D=${PH_IAX}/6395&${PH_IAX}/6318&${PH_IAX}/6367&${PH_IAX}/6308&${PH_IAX}/6338)
+exten => _290948[05],n,Set(E=${PH_IAX}/6353&${PH_IAX}/6437&${PH_IAX}/6316)
+exten => _290948[05],n,Set(F=${PH_IAX}/6322)
+exten => _290948[05],n,Set(G=${PH_IAX}/6364&${PH_IAX}/6379)
+exten => _290948[05],n,Set(H=${PH_IAX}/6348&${PH_IAX}/6370&${PH_IAX}/6383&${PH_IAX}/6335)
+
+
+exten => _290948[05],n,GotoIftme(6:01-9:00,sat,*,*?E)
+exten => _290948[05],n,GotoIftme(9:01-12:00,mon-fri,*,*?C)
+exten => _290948[05],n,GotoIftme(12:01-13:00,mon-fri,*,*?C)
+exten => _290948[05],n,GotoIftme(13:01-14:00,mon-fri,*,*?C)
+exten => _290948[05],n,GotoIftme(14:01-16:00,mon-fri,*,*?C)
+exten => _290948[05],n,GotoIftme(0:00-0:01,tue-sat,*,*?A)
+exten => _290948[05],n,GotoIftme(0:02-1:00,tue-sat,*,*?A)
+exten => _290948[05],n,GotoIftme(1:01-6:00,tue-sat,*,*?A)
+
+
+exten => _290948[05],n(E)Set(PHQUEUE=${E})
+exten => _290948[05],n,Goto(IBD-DIAL)
+
+exten => _290948[05],n(C)Set(PHQUEUE=${C})
+exten => _290948[05],n,Goto(IBD-DIAL)
+
+exten => _290948[05],n(A)Set(PHQUEUE=${A})
+exten => _290948[05],n,Goto(IBD-DIAL)
+

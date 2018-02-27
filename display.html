@@ -1,0 +1,56 @@
+<select id="ddlViewBy">
+  <option value="1">test1</option>
+  <option value="2" selected="selected">test2</option>
+  <option value="3">test3</option>
+</select>
+
+
+<script>
+var e = document.getElementById("ddlViewBy");
+var strUser = e.options[e.selectedIndex].value;
+</script>
+
+
+while ($row_group = $resultgroup-fetch_assoc()) 
+	{
+		if ($row_group['time[$rowtimerange[id]']==1)
+		{
+			$included[] = $rowtimerange[time_range];
+		}
+		else
+		{
+			$notincluded[] = $rowtimerange[time_range];
+		}
+	}
+	
+	
+	
+<!DOCTYPE html>
+<html>
+<body>
+<p>ACITVE EXTENSION</p>
+<select id="exten" size=<?php echo $activeexten; ?> style="width:100px;">
+  <?php echo $options ;?>
+</select>
+
+<p>INACITVE EXTENSION</p>
+<select id="exten" size=<?php echo $activeexten; ?> style="width:100px;">
+  <?php echo $options ;?>
+</select>
+
+<button onclick ="myFunction()">Display Extension </button>
+<p id="demo1"></p>
+
+
+<script>
+function myFunction() {
+	var e = document.getElementById("exten");
+	var strUser = e.options[e.selectedIndex].value;
+    document.getElementById("demo1").innerHTML = strUser;
+}
+</script>
+
+
+
+?</body>
+</html>
